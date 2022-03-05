@@ -1,0 +1,28 @@
+
+
+.add-wrap
+{
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  right: 28px;
+}
+.add-wrap
+{
+  display: flex;
+  input{
+    flex:1;
+  }
+  button{
+    margin-left: 8px;
+    padding:4px 8px;
+    border: unset;
+    background-color: rgb(79, 0, 224);
+    color:white;
+    border-radius: 3px;
+    &:hover{
+      cursor: pointer;
+      filter: brightness(1.3);
+    }
+  }
+}

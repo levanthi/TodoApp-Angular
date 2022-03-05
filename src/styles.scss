@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgb(0, 102, 255),rgb(89, 0, 255));
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+app-root{
+  background-color: white;
+  border-radius: 3px;
+  width: 650px;
+  padding:28px;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  min-height: 400px;
+  position:relative;
+}
+
+.todo-input{
+  padding:6px 16px;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  width:100%;
+  border: 1px solid #333;
+  border-radius: 3px;
+}
+app-todos{
+  margin: 10px;
+  flex: 1;
+  margin-bottom: 50px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* width */
+&::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 50%;
+}
+
+/* Track */
+&::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+&::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+&::-webkit-scrollbar-thumb:hover {
+  background: rgb(145, 145, 145);
+}
+
+}

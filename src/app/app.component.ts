@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { Todo } from './Model/Todo/todo.model'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'TodoApp';
+
+  Todos = new Array<Todo>()
+  constructor()
+  {
+    this.Todos.push(new Todo('name1'))
+    this.Todos.push(new Todo('name1'))
+    this.Todos.push(new Todo('name1'))
+  }
+  handleAddTodo(todo:string)
+  {
+    this.Todos.unshift(new Todo(todo))
+  }
 }

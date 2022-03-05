@@ -1,0 +1,23 @@
+
+<div class="todos">
+
+  <div class="list">
+    <app-todo-item *ngFor="let todo of Todos" [todoItem]="todo"></app-todo-item>
+    <!-- <app-todo-item *ngFor="let todo of todos"></app-todo-item> -->
+    <!-- <div *ngFor="let todo of Todos">
+      <span>{{todo.getName()}}</span>
+    </div> -->
+  </div>
+
+  <div class="add-wrap">
+    <input
+      class="todo-input"
+      placeholder="Enter todo name..."
+      [(ngModel)]="nameInput"
+      (keydown)="hadnleIsEnter($event)"
+    />
+    <button
+      (click)="handleAddTodo()"
+    >ADD TODO</button>
+  </div>
+</div>
