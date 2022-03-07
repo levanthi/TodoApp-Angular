@@ -1,4 +1,21 @@
-
+@keyframes appear{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes disappear{
+  from{
+    opacity: 1;
+    height: 40px;
+  }
+  to{
+    opacity: 0;
+    height: 0px;
+  }
+}
 
 .todo-item
 {
@@ -7,12 +24,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  user-select: none;
+  animation: appear .8s;
+  transition: all .5s;
   &:hover{
     background: rgb(228, 228, 228);
     border-radius: 3px;
+    cursor: pointer;
   }
-  span{
-    user-select: none;
+  .name_group{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    input{
+      margin-right: 8px;
+      width: 16px;
+      height:16px;
+      cursor: pointer;
+    }
   }
   img{
     width: 18px;
@@ -23,5 +52,14 @@
       transform: scale(1.3);
       cursor: pointer;
     }
+  }
+}
+.todo_name{
+  padding:6px;
+  flex: 1;
+  margin: 0 6px 0 2px;
+  &:focus{
+    outline: 1px solid rgb(0, 132, 172);
+    border-radius: 3px;
   }
 }

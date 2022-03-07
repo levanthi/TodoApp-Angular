@@ -3,4 +3,6 @@
   type="text"
   placeholder="Search by name..."
   class="todo-input"
+  [(ngModel)]="inputSearch"
+  (input)="onInputChange($event)"
 />

@@ -2,11 +2,12 @@
 <div class="todos">
 
   <div class="list">
-    <app-todo-item *ngFor="let todo of Todos" [todoItem]="todo"></app-todo-item>
-    <!-- <app-todo-item *ngFor="let todo of todos"></app-todo-item> -->
-    <!-- <div *ngFor="let todo of Todos">
-      <span>{{todo.getName()}}</span>
-    </div> -->
+      <app-todo-item
+      (idRemove)="onRemove($event)"
+      *ngFor="let todo of Todos" [todoItem]="todo"
+      (idStatusChange)="onStatusChange($event)"
+      (nameChange)="onNameChange($event)"
+    ></app-todo-item>
   </div>
 
   <div class="add-wrap">
@@ -17,7 +18,7 @@
       (keydown)="hadnleIsEnter($event)"
     />
     <button
-      (click)="handleAddTodo()"
+      (click)="handleAddTodo($event)"
     >ADD TODO</button>
   </div>
 </div>
