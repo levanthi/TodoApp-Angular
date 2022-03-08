@@ -1,6 +1,34 @@
-<div class="todo-item">
-  <span>{{todoItem.getName()}}</span>
-  <span>
-    <img src="../../../assets/svg-icon/trash-can-solid.svg" />
+<label
+  class="todo-item"
+  [ngClass]="{'completed':todoItem.getIsCompleted()}"
+  #todoItemRef
+  for="{{todoItem.getId()}}"
+>
+  <span class="name_group" >
+    <input
+      id="{{todoItem.getId()}}"
+      type="checkbox"
+      [checked]="todoItem.getIsCompleted()"
+      (change)="onChangeStatus($event)"
+    />
+    <div
+      class="todo_name"
+      spellcheck="false"
+      #todoName
+      (blur)="handleBlur($event)"
+      (keydown)="handleKeydown($event)"
+    >{{todoItem.getName()}}</div>
   </span>
-</div>
+  <span class="icon_group" >
+    <img
+      data-id="{{todoItem.getId()}}"
+      src="../../../assets/svg-icon/pen-to-square-solid.svg"
+      (click)="onEditName($event)"
+    />
+    <img
+      data-id="{{todoItem.getId()}}"
+      src="../../../assets/svg-icon/trash-can-solid.svg"
+      (click)="handleDelete($event)"
+    />
+  </span>
+</label>

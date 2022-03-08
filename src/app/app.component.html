@@ -1,6 +1,9 @@
 <h1>Todo App</h1>
-<app-filter></app-filter>
+<app-filter (searchInput)="handleSearchInput($event)" ></app-filter>
 <app-todos
-  [Todos]="Todos"
+  [Todos]="filter()"
   (todoNeedAdd)="handleAddTodo($event)"
+  (idRemove)="handleRemove($event)"
+  (idStatusChange)="handleStatusChange($event)"
+  (nameChange)="handleNameChange($event)"
 ></app-todos>
